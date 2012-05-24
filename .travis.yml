@@ -1,0 +1,10 @@
+language: java
+before_install:
+  - sudo chmod 777 /dev/shm
+  - wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
+  - chmod +x /tmp/Xvfb
+  - sudo /tmp/Xvfb :9 -screen 0 1024x768x24 -ac &
+  - export DISPLAY=:9
+  - sleep 30
+  - sudo apt-get install -y --force-yes libxss1 xdg-utils
+  - URL='https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE

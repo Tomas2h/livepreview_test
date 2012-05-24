@@ -1,0 +1,1 @@
+cmd_/media/data/chrome_checkout/trunk/src/tools/xdisplaycheck/out/Debug/obj.target/build/linux/x11.stamp := touch /media/data/chrome_checkout/trunk/src/tools/xdisplaycheck/out/Debug/obj.target/build/linux/x11.stamp
