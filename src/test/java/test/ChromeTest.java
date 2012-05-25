@@ -62,7 +62,7 @@ public class ChromeTest extends TestCase {
                 }
             });
         } catch (final Throwable t) {
-            Assert.fail("Title did not change to " + newTitle + " within " + timeOutInSeconds + " seconds.");
+            Assert.fail("Title did not change to " + newTitle + " within " + timeOutInSeconds + " seconds. Title is: " + driver.getTitle());
         }
     }
 
