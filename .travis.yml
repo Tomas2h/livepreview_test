@@ -1,6 +1,5 @@
 language: java
 before_install:
-  - sudo apt-get purge -y metacity
   - sudo apt-get install -y --force-yes xfonts-base
   - sudo chmod 777 /dev/shm
   - wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
