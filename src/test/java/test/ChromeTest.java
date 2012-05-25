@@ -90,6 +90,6 @@ public class ChromeTest extends TestCase {
         searchBox.sendKeys("webdriver");
         searchBox.submit();
 
-        assertTitleChangedTo("webdriver - Google Search", 500);
+        assertTitleChangedTo("webdriver - Google Search", 5);
     }
 }
