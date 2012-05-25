@@ -7,7 +7,7 @@ livepreview_test
 - Xvfb.32bit ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/tools/xvfb/))
 - Xvfb.64bit ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/tools/xvfb/))
 
-Run [cmd ushing Chromium trunk args](https://src.chromium.org/viewvc/chrome/trunk/tools/build/scripts/slave/xvfb.py?view=markup).
+Run [cmd useing Chromium trunk args](https://src.chromium.org/viewvc/chrome/trunk/tools/build/scripts/slave/xvfb.py?view=markup).
 
 `Xvfb :9 -screen 0 1024x768x24 -ac`
 
@@ -15,7 +15,7 @@ Set env var.
 
 `export DISPLAY=:9`
 
-Run xdisplaycheck.
+Run xdisplaycheck (not required when using travis.yml in this repository).
 
 `xdisplaycheck`
 
