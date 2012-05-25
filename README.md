@@ -27,6 +27,10 @@ Current Issues
 0. https://code.google.com/p/chromium/issues/detail?id=121655 (Active)
 0. https://code.google.com/p/chromium/issues/detail?id=123413
 
+
+`xdg-desktop-menu: No writable system menu directory found.` does not prevent chrome from installing.
+https://code.google.com/p/chromium/issues/detail?id=73008
+
 ```
 -------------------------------------------------------
  T E S T S
