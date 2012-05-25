@@ -5,7 +5,7 @@ before_install:
   - sudo chmod 777 /dev/shm
   - wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
   - chmod +x /tmp/Xvfb
-  - sudo /tmp/Xvfb :9 -screen 0 1024x768x24 -ac &
+  - /tmp/Xvfb :9 -screen 0 1024x768x24 -ac 2>/dev/null &
   - export DISPLAY=:9
   - sleep 5
   - sudo apt-get install -y --force-yes libxss1 libnss3-1d xdg-utils
