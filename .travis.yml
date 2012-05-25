@@ -1,12 +1,10 @@
 language: java
 before_install:
-  - sudo chmod 777 /dev/shm
-  - sudo mkdir -p /usr/share/
-  - sudo chmod 777 /usr/share/
+  - sudo mkdir -p /usr/share/menu/
+  - sudo chmod 777 /usr/share/menu/
   - wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
   - chmod +x /tmp/Xvfb
   - /tmp/Xvfb :9 -screen 0 1024x768x24 -ac 2>/dev/null &
   - export DISPLAY=:9
-  - sleep 5
   - sudo apt-get install -y --force-yes libxss1 libnss3-1d xdg-utils
   - URL='https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
