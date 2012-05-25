@@ -58,33 +58,36 @@ WebDriver
 Install deb from URL
 - http://askubuntu.com/questions/51854/is-it-possible-to-install-a-deb-from-a-url
 
-Full log of passing test (without quiet):
-
 Remove line numbers from travis using `$x("//*/div/pre/p/a").forEach(function(e){ e.parentNode.removeChild(e) });` in Chrome.
 
-```
+Full log of failing test (without quiet, test does execute properly even if it fails due to page title):
+
+```bash
 Using worker: jvm-otp1.worker.travis-ci.org:travis-jvm-5
 $ cd ~/builds
 $ git clone --depth=100 --quiet git://github.com/bootstraponline/livepreview_test.git bootstraponline/livepreview_test
 $ cd bootstraponline/livepreview_test
-$ git checkout -qf 106a8d4e66f820bba60888f36576a3d79836af15
+$ git checkout -qf 4ce865b24651ff366a9a2398c8cce26db54603da
 $ sudo chmod 777 /dev/shm
-$ sudo mkdir -p /usr/share/
-$ sudo chmod 777 /usr/share/
 $ wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
---2012-05-25 17:18:06--  https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit
+--2012-05-25 16:27:41--  https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit
 Resolving raw.github.com... 207.97.227.243
 Connecting to raw.github.com|207.97.227.243|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 7924711 (7.6M) [text/plain]
 Saving to: `/tmp/Xvfb'
-100%[======================================>] 7,924,711   1.85M/s   in 4.8s    
-2012-05-25 17:18:13 (1.58 MB/s) - `/tmp/Xvfb' saved [7924711/7924711]
+100%[======================================>] 7,924,711   1.29M/s   in 6.0s    
+2012-05-25 16:27:50 (1.26 MB/s) - `/tmp/Xvfb' saved [7924711/7924711]
 $ chmod +x /tmp/Xvfb
-$ /tmp/Xvfb :9 -screen 0 1024x768x24 -ac 2>/dev/null &
-[1] 1829
+$ sudo /tmp/Xvfb :9 -screen 0 1024x768x24 -ac &
+[1] 1821
 $ export DISPLAY=:9
-$ sleep 5
+[dix] Could not init font path element /usr/share/fonts/X11/TTF/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/OTF/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/Type1/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/100dpi/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/75dpi/, removing from list!
+$ sleep 30
 $ sudo apt-get install -y --force-yes libxss1 libnss3-1d xdg-utils
 Reading package lists... Done
 Building dependency tree       
@@ -113,7 +116,7 @@ Get:7 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libxxf86dga1 i386 2:1.1.
 Get:8 http://de.archive.ubuntu.com/ubuntu/ oneiric/main x11-utils i386 7.6+3 [217 kB]
 Get:9 http://de.archive.ubuntu.com/ubuntu/ oneiric/main x11-xserver-utils i386 7.6+3 [173 kB]
 Get:10 http://de.archive.ubuntu.com/ubuntu/ oneiric/main xdg-utils all 1.1.0~rc1-2ubuntu6 [66.6 kB]
-Fetched 577 kB in 0s (1,191 kB/s)
+Fetched 577 kB in 0s (1,620 kB/s)
 Selecting previously deselected package libxcb-shape0.
 (Reading database ... 75064 files and directories currently installed.)
 Unpacking libxcb-shape0 (from .../libxcb-shape0_1.7-3_i386.deb) ...
@@ -151,7 +154,7 @@ ldconfig deferred processing now taking place
 $ URL='https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
 Selecting previously deselected package google-chrome-stable.
 (Reading database ... 75227 files and directories currently installed.)
-Unpacking google-chrome-stable (from /tmp/tmp.4fPE0x39M6) ...
+Unpacking google-chrome-stable (from /tmp/tmp.GiOVai3NIh) ...
 Setting up google-chrome-stable (19.0.1084.52-r138391) ...
 xdg-desktop-menu: No writable system menu directory found.
 update-alternatives: using /usr/bin/google-chrome to provide /usr/bin/x-www-browser (x-www-browser) in auto mode.
@@ -186,25 +189,76 @@ Downloaded: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-jun
 Downloading: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-providers/2.7.2/surefire-providers-2.7.2.pom
 Downloaded: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-providers/2.7.2/surefire-providers-2.7.2.pom (2 KB at 3.7 KB/sec)
 Downloading: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.jar
-Downloaded: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.jar (25 KB at 51.9 KB/sec)
+Downloaded: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.jar (25 KB at 51.2 KB/sec)
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
 Running test.ChromeTest
 Started ChromeDriver
-port=28734
+port=26948
 version=20.0.1133.0
 log=/home/vagrant/builds/bootstraponline/livepreview_test/chromedriver.log
 Xlib:  extension "RANDR" missing on display ":9".
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.12 sec
+[6129:6129:295261316:ERROR:renderer_main.cc(224)] Running without renderer sandbox
+[6135:6135:295576642:ERROR:renderer_main.cc(224)] Running without renderer sandbox
+Xlib:  extension "RANDR" missing on display ":9".
+[6145:6145:300314642:ERROR:gl_surface_glx.cc(60)] glxQueryVersion failed
+[6145:6145:300315579:ERROR:gl_surface_linux.cc(64)] GLSurfaceGLX::InitializeOneOff failed.
+Xlib:  extension "RANDR" missing on display ":9".
+5 XSELINUXs still allocated at reset
+SCREEN: 0 objects of 64 bytes = 0 total bytes 0 private allocs
+DEVICE: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+CLIENT: 0 objects of 56 bytes = 0 total bytes 0 private allocs
+WINDOW: 0 objects of 24 bytes = 0 total bytes 0 private allocs
+PIXMAP: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+GC: 0 objects of 44 bytes = 0 total bytes 0 private allocs
+CURSOR: 0 objects of 4 bytes = 0 total bytes 0 private allocs
+CURSOR_BITS: 0 objects of 4 bytes = 0 total bytes 0 private allocs
+DBE_WINDOW: 0 objects of 12 bytes = 0 total bytes 0 private allocs
+TOTAL: 5 objects, 72 bytes, 0 allocs
+4 DEVICEs still allocated at reset
+DEVICE: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+CLIENT: 0 objects of 56 bytes = 0 total bytes 0 private allocs
+WINDOW: 0 objects of 24 bytes = 0 total bytes 0 private allocs
+PIXMAP: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+GC: 0 objects of 44 bytes = 0 total bytes 0 private allocs
+CURSOR: 0 objects of 4 bytes = 0 total bytes 0 private allocs
+CURSOR_BITS: 0 objects of 4 bytes = 0 total bytes 0 private allocs
+DBE_WINDOW: 0 objects of 12 bytes = 0 total bytes 0 private allocs
+TOTAL: 5 objects, 72 bytes, 0 allocs
+1 PIXMAPs still allocated at reset
+PIXMAP: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+GC: 0 objects of 44 bytes = 0 total bytes 0 private allocs
+CURSOR: 0 objects of 4 bytes = 0 total bytes 0 private allocs
+CURSOR_BITS: 0 objects of 4 bytes = 0 total bytes 0 private allocs
+DBE_WINDOW: 0 objects of 12 bytes = 0 total bytes 0 private allocs
+TOTAL: 1 objects, 8 bytes, 0 allocs
+[dix] Could not init font path element /usr/share/fonts/X11/TTF/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/OTF/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/Type1/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/100dpi/, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/75dpi/, removing from list!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 504.391 sec <<< FAILURE!
 Results :
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+Failed tests: 
+  testGoogleSearch(test.ChromeTest): Title did not change to webdriver - Google Search within 500 seconds.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
+[INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 6.414s
-[INFO] Finished at: Fri May 25 17:20:56 UTC 2012
+[INFO] Total time: 8:26.581s
+[INFO] Finished at: Fri May 25 16:40:15 UTC 2012
 [INFO] Final Memory: 4M/15M
 [INFO] ------------------------------------------------------------------------
-Done. Build script exited with: 0
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.7.2:test (default-test) on project web_driver: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/vagrant/builds/bootstraponline/livepreview_test/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Done. Build script exited with: 1
 ```
