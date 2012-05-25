@@ -28,6 +28,7 @@ Run xdisplaycheck.
 Current Issues
 
 0. https://code.google.com/p/chromium/issues/detail?id=120775
+0. https://code.google.com/p/chromium/issues/detail?id=121655 (Active)
 
 ```
 -------------------------------------------------------
