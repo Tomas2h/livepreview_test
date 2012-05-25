@@ -43,7 +43,7 @@ public abstract class Util {
 
 		ChromeDriverService service = new ChromeDriverService.Builder()
 				.usingChromeDriverExecutable(driverFile).usingAnyFreePort()
-				.withEnvironment(ImmutableMap.of("DISPLAY", ":10")).build();
+				.withEnvironment(ImmutableMap.of("DISPLAY", ":9")).build();
 		try {
 			service.start();
 		} catch (final IOException e) {
