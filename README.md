@@ -3,7 +3,7 @@ livepreview_test
 
 - chromedriver_linux32_20.0.1133.0 ([ChromeDriver](https://code.google.com/p/chromedriver/downloads/detail?name=chromedriver_linux32_20.0.1133.0.zip))
 - chromedriver_linux64_20.0.1133.0 ([ChromeDriver](https://code.google.com/p/chromedriver/downloads/detail?name=chromedriver_linux64_20.0.1133.0.zip))
-- xdisplaycheck (Chromium trunk - compiled for x64)
+- xdisplaycheck ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/src/tools/xdisplaycheck/) - compiled for x64)
 - Xvfb.32bit ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/tools/xvfb/))
 - Xvfb.64bit ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/tools/xvfb/))
 
