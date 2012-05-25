@@ -46,7 +46,7 @@ Use "`latest ChromeDriver with a current version of Google Chrome`" as stated on
 
 # Resources
 
-WebDriver Resources
+WebDriver
 - http://rostislav-matl.blogspot.com/2011/05/moving-to-selenium-2-on-webdriver-part.html
 
 Install deb from URL
