@@ -57,3 +57,154 @@ WebDriver
 
 Install deb from URL
 - http://askubuntu.com/questions/51854/is-it-possible-to-install-a-deb-from-a-url
+
+Full log of passing test (without quiet):
+
+Remove line numbers from travis using `$x("//*/div/pre/p/a").forEach(function(e){ e.parentNode.removeChild(e) });` in Chrome.
+
+```
+Using worker: jvm-otp1.worker.travis-ci.org:travis-jvm-5
+$ cd ~/builds
+$ git clone --depth=100 --quiet git://github.com/bootstraponline/livepreview_test.git bootstraponline/livepreview_test
+$ cd bootstraponline/livepreview_test
+$ git checkout -qf 106a8d4e66f820bba60888f36576a3d79836af15
+$ sudo chmod 777 /dev/shm
+$ sudo mkdir -p /usr/share/
+$ sudo chmod 777 /usr/share/
+$ wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
+--2012-05-25 17:18:06--  https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit
+Resolving raw.github.com... 207.97.227.243
+Connecting to raw.github.com|207.97.227.243|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7924711 (7.6M) [text/plain]
+Saving to: `/tmp/Xvfb'
+100%[======================================>] 7,924,711   1.85M/s   in 4.8s    
+2012-05-25 17:18:13 (1.58 MB/s) - `/tmp/Xvfb' saved [7924711/7924711]
+$ chmod +x /tmp/Xvfb
+$ /tmp/Xvfb :9 -screen 0 1024x768x24 -ac 2>/dev/null &
+[1] 1829
+$ export DISPLAY=:9
+$ sleep 5
+$ sudo apt-get install -y --force-yes libxss1 libnss3-1d xdg-utils
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+libnss3-1d is already the newest version.
+libnss3-1d set to manually installed.
+The following extra packages will be installed:
+  libfile-basedir-perl libfile-desktopentry-perl libfile-mimeinfo-perl
+  libxcb-shape0 libxv1 libxxf86dga1 x11-utils x11-xserver-utils
+Suggested packages:
+  mesa-utils nickle cairo-5c xorg-docs-core gvfs-bin
+The following NEW packages will be installed:
+  libfile-basedir-perl libfile-desktopentry-perl libfile-mimeinfo-perl
+  libxcb-shape0 libxss1 libxv1 libxxf86dga1 x11-utils x11-xserver-utils
+  xdg-utils
+0 upgraded, 10 newly installed, 0 to remove and 22 not upgraded.
+Need to get 577 kB of archives.
+After this operation, 2,208 kB of additional disk space will be used.
+Get:1 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libxcb-shape0 i386 1.7-3 [6,286 B]
+Get:2 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libxss1 i386 1:1.2.1-2 [8,604 B]
+Get:3 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libxv1 i386 2:1.0.6-2 [12.0 kB]
+Get:4 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libfile-basedir-perl all 0.03-1fakesync1 [10.5 kB]
+Get:5 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libfile-desktopentry-perl all 0.04-2 [18.8 kB]
+Get:6 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libfile-mimeinfo-perl all 0.15-1 [52.3 kB]
+Get:7 http://de.archive.ubuntu.com/ubuntu/ oneiric/main libxxf86dga1 i386 2:1.1.2-1 [11.8 kB]
+Get:8 http://de.archive.ubuntu.com/ubuntu/ oneiric/main x11-utils i386 7.6+3 [217 kB]
+Get:9 http://de.archive.ubuntu.com/ubuntu/ oneiric/main x11-xserver-utils i386 7.6+3 [173 kB]
+Get:10 http://de.archive.ubuntu.com/ubuntu/ oneiric/main xdg-utils all 1.1.0~rc1-2ubuntu6 [66.6 kB]
+Fetched 577 kB in 0s (1,191 kB/s)
+Selecting previously deselected package libxcb-shape0.
+(Reading database ... 75064 files and directories currently installed.)
+Unpacking libxcb-shape0 (from .../libxcb-shape0_1.7-3_i386.deb) ...
+Selecting previously deselected package libxss1.
+Unpacking libxss1 (from .../libxss1_1%3a1.2.1-2_i386.deb) ...
+Selecting previously deselected package libxv1.
+Unpacking libxv1 (from .../libxv1_2%3a1.0.6-2_i386.deb) ...
+Selecting previously deselected package libfile-basedir-perl.
+Unpacking libfile-basedir-perl (from .../libfile-basedir-perl_0.03-1fakesync1_all.deb) ...
+Selecting previously deselected package libfile-desktopentry-perl.
+Unpacking libfile-desktopentry-perl (from .../libfile-desktopentry-perl_0.04-2_all.deb) ...
+Selecting previously deselected package libfile-mimeinfo-perl.
+Unpacking libfile-mimeinfo-perl (from .../libfile-mimeinfo-perl_0.15-1_all.deb) ...
+Selecting previously deselected package libxxf86dga1.
+Unpacking libxxf86dga1 (from .../libxxf86dga1_2%3a1.1.2-1_i386.deb) ...
+Selecting previously deselected package x11-utils.
+Unpacking x11-utils (from .../x11-utils_7.6+3_i386.deb) ...
+Selecting previously deselected package x11-xserver-utils.
+Unpacking x11-xserver-utils (from .../x11-xserver-utils_7.6+3_i386.deb) ...
+Selecting previously deselected package xdg-utils.
+Unpacking xdg-utils (from .../xdg-utils_1.1.0~rc1-2ubuntu6_all.deb) ...
+Processing triggers for man-db ...
+Setting up libxcb-shape0 (1.7-3) ...
+Setting up libxss1 (1:1.2.1-2) ...
+Setting up libxv1 (2:1.0.6-2) ...
+Setting up libfile-basedir-perl (0.03-1fakesync1) ...
+Setting up libfile-desktopentry-perl (0.04-2) ...
+Setting up libfile-mimeinfo-perl (0.15-1) ...
+Setting up libxxf86dga1 (2:1.1.2-1) ...
+Setting up x11-utils (7.6+3) ...
+Setting up x11-xserver-utils (7.6+3) ...
+Setting up xdg-utils (1.1.0~rc1-2ubuntu6) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+$ URL='https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
+Selecting previously deselected package google-chrome-stable.
+(Reading database ... 75227 files and directories currently installed.)
+Unpacking google-chrome-stable (from /tmp/tmp.4fPE0x39M6) ...
+Setting up google-chrome-stable (19.0.1084.52-r138391) ...
+xdg-desktop-menu: No writable system menu directory found.
+update-alternatives: using /usr/bin/google-chrome to provide /usr/bin/x-www-browser (x-www-browser) in auto mode.
+update-alternatives: using /usr/bin/google-chrome to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode.
+Processing triggers for man-db ...
+$ mvn install --quiet -DskipTests=true
+$ mvn test
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building web_driver 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ web_driver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/vagrant/builds/bootstraponline/livepreview_test/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ web_driver ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.3:testResources (default-testResources) @ web_driver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/vagrant/builds/bootstraponline/livepreview_test/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ web_driver ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.7.2:test (default-test) @ web_driver ---
+[INFO] Surefire report directory: /home/vagrant/builds/bootstraponline/livepreview_test/target/surefire-reports
+Downloading: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.pom
+Downloaded: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.pom (3 KB at 6.9 KB/sec)
+Downloading: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-providers/2.7.2/surefire-providers-2.7.2.pom
+Downloaded: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-providers/2.7.2/surefire-providers-2.7.2.pom (2 KB at 3.7 KB/sec)
+Downloading: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.jar
+Downloaded: http://repo1.maven.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.jar (25 KB at 51.9 KB/sec)
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running test.ChromeTest
+Started ChromeDriver
+port=28734
+version=20.0.1133.0
+log=/home/vagrant/builds/bootstraponline/livepreview_test/chromedriver.log
+Xlib:  extension "RANDR" missing on display ":9".
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.12 sec
+Results :
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.414s
+[INFO] Finished at: Fri May 25 17:20:56 UTC 2012
+[INFO] Final Memory: 4M/15M
+[INFO] ------------------------------------------------------------------------
+Done. Build script exited with: 0
+```
