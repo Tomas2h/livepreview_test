@@ -88,6 +88,6 @@ public class ChromeTest extends TestCase {
 		searchBox.sendKeys("webdriver");
 		searchBox.submit();
 
-		assertTitleChangedToContain("webdriver -", 50);
+		assertTitleChangedToContain("fail -", 50);
 	}
 }
