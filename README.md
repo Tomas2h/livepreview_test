@@ -7,12 +7,6 @@ livepreview_test
 - Xvfb.32bit ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/tools/xvfb/))
 - Xvfb.64bit ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/tools/xvfb/))
 
-WebDriver Resources
-- http://rostislav-matl.blogspot.com/2011/05/moving-to-selenium-2-on-webdriver-part.html
-
-Install deb from URL
-- http://askubuntu.com/questions/51854/is-it-possible-to-install-a-deb-from-a-url
-
 Run [cmd ushing Chromium trunk args](https://src.chromium.org/viewvc/chrome/trunk/tools/build/scripts/slave/xvfb.py?view=markup).
 
 `Xvfb :9 -screen 0 1024x768x24 -ac`
@@ -49,3 +43,11 @@ Xlib:  extension "RANDR" missing on display ":9".
 ```
 
 Use "`latest ChromeDriver with a current version of Google Chrome`" as stated on [the chromedriver wiki](https://code.google.com/p/chromedriver/wiki/ReleaseNotes).
+
+# Resources
+
+WebDriver Resources
+- http://rostislav-matl.blogspot.com/2011/05/moving-to-selenium-2-on-webdriver-part.html
+
+Install deb from URL
+- http://askubuntu.com/questions/51854/is-it-possible-to-install-a-deb-from-a-url
