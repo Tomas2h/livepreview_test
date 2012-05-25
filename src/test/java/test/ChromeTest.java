@@ -63,7 +63,7 @@ public class ChromeTest extends TestCase {
 					});
 		} catch (final Throwable t) {
 			Assert.fail("Title did not change to contain " + newTitle + " within "
-					+ timeOutInSeconds + " seconds.");
+					+ timeOutInSeconds + " seconds. Title is: " + driver.getTitle());
 		}
 	}
 
@@ -88,6 +88,6 @@ public class ChromeTest extends TestCase {
 		searchBox.sendKeys("webdriver");
 		searchBox.submit();
 
-		assertTitleChangedToContain("fail -", 50);
+		assertTitleChangedToContain("fail -", 5);
 	}
 }
