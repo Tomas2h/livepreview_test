@@ -42,7 +42,7 @@ Xlib:  extension "RANDR" missing on display ":9".
 5 XSELINUXs still allocated at reset
 ```
 
-Use "`latest ChromeDriver with a current version of Google Chrome`" as stated on [the chromedriver wiki](https://code.google.com/p/chromedriver/wiki/ReleaseNotes).
+Use `"latest ChromeDriver with a current version of Google Chrome"` as stated on [the chromedriver wiki](https://code.google.com/p/chromedriver/wiki/ReleaseNotes).
 
 # Resources
 
