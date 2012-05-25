@@ -19,6 +19,8 @@ Run xdisplaycheck.
 
 `xdisplaycheck`
 
+Chrome build bots run Ubuntu Lucid x64 (10.04).
+
 Current Issues
 
 0. https://code.google.com/p/chromium/issues/detail?id=120775
