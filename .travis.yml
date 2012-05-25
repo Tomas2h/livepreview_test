@@ -1,7 +1,6 @@
 language: java
 before_install:
-  - sudo mkdir -p /usr/share/menu/
-  - sudo chmod 777 /usr/share/menu/
+  - sudo mkdir -p /etc/xdg/menus/ `whoami`/.config/menus/applications-merged/ /usr/share/app-install/desktop/ /usr/share/app-install/menu.d/ /usr/share/menu/
   - wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
   - chmod +x /tmp/Xvfb
   - /tmp/Xvfb :9 -screen 0 1024x768x24 -ac 2>/dev/null &
