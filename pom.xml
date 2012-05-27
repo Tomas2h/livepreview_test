@@ -1,67 +1,49 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>web_driver</groupId>
-  <artifactId>web_driver</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>web_driver</groupId>
+	<artifactId>web_driver</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-  <!-- https://maven.apache.org/general.html -->
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<!-- https://maven.apache.org/general.html -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <!-- http://mojo.codehaus.org/selenium-maven-plugin/examples/headless-with-xvfb.html
-       http://mojo.codehaus.org/selenium-maven-plugin/-->
-<!-- this isn't working.
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>selenium-maven-plugin</artifactId>
-        <version>2.3</version>
-        <executions>
-          <execution>
-            <id>xvfb</id>
-            <phase>pre-integration-test</phase>
-            <goals>
-              <goal>xvfb</goal>
-            </goals>
-          </execution>
+	<!-- Target Java 1.6 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-          <execution>
-            <id>selenium</id>
-            <phase>pre-integration-test</phase>
-            <goals>
-              <goal>start-server</goal>
-            </goals>
-            <configuration>
-              <background>true</background>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
--->
-
-  <!-- http://seleniumhq.org/download/maven.html -->
-  <dependencies>
-    <!-- Just use the Chrome Driver -->
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-chrome-driver</artifactId>
-      <version>LATEST</version>
-    </dependency>
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-support</artifactId>
-      <version>LATEST</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>LATEST</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<!-- http://seleniumhq.org/download/maven.html -->
+	<dependencies>
+		<!-- Just use the Chrome Driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>LATEST</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>LATEST</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>LATEST</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Xtend dependency broken on eclipse. Wait for 2.3 release. -->
+	</dependencies>
 </project>
