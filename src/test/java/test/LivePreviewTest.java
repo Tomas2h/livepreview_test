@@ -15,7 +15,7 @@ import test_util.Util;
 
 /** Runs on local and travis. **/
 @RunWith(BlockJUnit4ClassRunner.class)
-public class ChromeTest extends Base {
+public class LivePreviewTest extends Base {
 	// Must be static.
 	private static ChromeDriverService service;
 
