@@ -1,6 +1,13 @@
 livepreview_test
 ================
 
+pom.xml
+ - selenium-chrome-driver 2.22.0
+ - selenium-support 2.22.0
+ - junit 4.10
+
+---
+
 - chromedriver_linux32_20.0.1133.0 ([ChromeDriver](https://code.google.com/p/chromedriver/downloads/detail?name=chromedriver_linux32_20.0.1133.0.zip))
 - chromedriver_linux64_20.0.1133.0 ([ChromeDriver](https://code.google.com/p/chromedriver/downloads/detail?name=chromedriver_linux64_20.0.1133.0.zip))
 - xdisplaycheck ([Chromium trunk](https://src.chromium.org/viewvc/chrome/trunk/src/tools/xdisplaycheck/) - compiled for x64)
