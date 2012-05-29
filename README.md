@@ -21,7 +21,7 @@ Run xdisplaycheck (not required when using travis.yml in this repository).
 
 Chrome build bots run Ubuntu Lucid x64 (10.04).
 
-Current Issues
+Errors that are safe to ignore:
 
 0. https://code.google.com/p/chromium/issues/detail?id=120775
 0. https://code.google.com/p/chromium/issues/detail?id=121655 (Active)
