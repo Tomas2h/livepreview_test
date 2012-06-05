@@ -8,7 +8,7 @@
   <!-- https://maven.apache.org/general.html -->
   <properties>
     <!-- 2.22.0 is currently the latest, however it's not on CloudBees -->
-    <selenium.version>2.21.0</selenium.version>
+    <selenium.version>LATEST</selenium.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -43,7 +43,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.10</version>
+      <version>LATEST</version>
     </dependency>
     <!-- Xtend dependency broken on eclipse. Wait for 2.3 release. -->
   </dependencies>
