@@ -5,6 +5,10 @@ livepreview_test
 
 Tests [livepreview](https://github.com/bootstraponline/livepreview) hosted on GitHub Pages.
 
+Depends on [livepreview_test_gen](https://github.com/bootstraponline/livepreview_test_gen).
+
+To run the tests on Sauce use [livepreview_test_sauce](https://github.com/bootstraponline/livepreview_test_sauce).
+
 pom.xml
  - selenium-chrome-driver 2.22.0
  - selenium-support 2.22.0
