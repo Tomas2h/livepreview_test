@@ -1,4 +1,6 @@
 language: java
+jdk:
+  - oraclejdk7
 before_install:
   - wget https://raw.github.com/bootstraponline/livepreview_test/master/from_chrome/xvfb/Xvfb.32bit -O /tmp/Xvfb
   - chmod +x /tmp/Xvfb

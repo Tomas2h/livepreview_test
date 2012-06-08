@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static test_util.JavaScript.*;
 
 /* For local WebDriver and travis-ci.
  * Sauce tests must extend Sauce.
@@ -17,8 +18,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Base extends TestCase {
 	// Default Timeout.
 	private final int t = 5;
-	private static final String someText = JavaScript.someText();
-	private static final String verifyRender = JavaScript.verifyRender();
+
+	private static final String someText = someText().toString();
+	private static final String setupGlobals = setupGlobals().toString();
+	private static final String childrenLength = childrenLength().toString();
+	private static final String firstChildHTML = firstChildHTML().toString();
+	private static final String firstChildTagName = firstChildTagName()
+			.toString();
+	private static final String checkCodeStyle0 = checkCodeStyle0().toString();
+	private static final String checkCodeStyle1 = checkCodeStyle1().toString();
+	private static final String checkCodeStyle2 = checkCodeStyle2().toString();
+
 	protected WebDriver driver;
 	protected JavascriptExecutor exec;
 
@@ -70,13 +80,18 @@ public class Base extends TestCase {
 		assertTrue((Boolean) exec.executeScript("return " + javascript));
 	}
 
+	/* Only for debugging. */
+	public void printTest(final String javascript) {
+		System.out.println("return " + javascript);
+	}
+
 	public void go(final String url) {
 		driver.get(url);
 	}
 
 	@Test
 	public void testLivePreview() {
-		go("http://bootstraponline.github.com/livepreview/");
+		go("http://bootstraponline.github.com/livepreview/public/");
 		assertTitleChangedToContain("Live Preview");
 
 		// Remove onbeforeunload.
@@ -92,7 +107,14 @@ public class Base extends TestCase {
 		exeTrue(expectedText);
 
 		// Check that text rendered as expected.
-		exeTrue(verifyRender);
+		// Setup globals first.
+		exe(setupGlobals);
+		exeTrue(childrenLength);
+		exeTrue(firstChildHTML);
+		exeTrue(firstChildTagName);
+		exeTrue(checkCodeStyle0);
+		exeTrue(checkCodeStyle1);
+		exeTrue(checkCodeStyle2);
 
 		// Check default commit message.
 		final String expectedDefaultCommitMessage = "$.commentSession.getValue() == 'Updated 0 (markdown)'";
