@@ -3,6 +3,8 @@ livepreview_test
 
 [![Build Status](https://secure.travis-ci.org/bootstraponline/livepreview_test.png?branch=master)](http://travis-ci.org/bootstraponline/livepreview_test)
 
+Tests [livepreview](https://github.com/bootstraponline/livepreview) hosted on GitHub Pages.
+
 pom.xml
  - selenium-chrome-driver 2.22.0
  - selenium-support 2.22.0
