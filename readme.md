@@ -15,3 +15,5 @@ Supported browsers:
 - Chrome >= 7.0
 - Firefox >= 4.0
 - Safari >= 5.1
+
+Live preview requires [Typed Arrays](http://caniuse.com/typedarrays).
