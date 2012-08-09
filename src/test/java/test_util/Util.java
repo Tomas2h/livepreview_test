@@ -10,7 +10,7 @@ import junit.framework.Assert;
 import org.openqa.selenium.chrome.ChromeDriverService;
 
 public abstract class Util {
-	public static final String chromeDriverVersion = "20.0.1133.0";
+	public static final String chromeDriverVersion = "21.0.1180.4";
 
 	public static String timeNow() {
 		return DateFormat.getDateTimeInstance().format(new Date());
