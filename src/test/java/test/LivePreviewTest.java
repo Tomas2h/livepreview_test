@@ -13,7 +13,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import test_util.Base;
 import test_util.Util;
 
-/** Runs on local and travis. **/
+/**
+ * Runs on local and travis-ci.org
+ * http://travis-ci.org/#!/bootstraponline/livepreview_test
+ **/
 @RunWith(BlockJUnit4ClassRunner.class)
 public class LivePreviewTest extends Base {
 	// Must be static.
