@@ -91,7 +91,7 @@ public class Base extends TestCase {
 
 	@Test
 	public void testLivePreview() {
-		go("http://bootstraponline.github.com/livepreview/public/");
+		go("http://bootstraponline.github.com/livepreview/public/web/");
 		assertTitleChangedToContain("Live Preview");
 
 		// Remove onbeforeunload.
