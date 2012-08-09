@@ -41,7 +41,8 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>LATEST</version>
+      <!-- Travis-CI can't find LATEST junit snapshot. -->
+      <version>4.10</version>
     </dependency>    
   </dependencies>
 </project>
